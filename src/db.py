@@ -2,7 +2,7 @@ import os
 
 import psycopg2
 
-from src import get_levenshtein_score
+from lev import get_levenshtein_score
 
 db_conn = psycopg2.connect(
     host=os.environ.get('PGSQL_HOST'),

@@ -20,13 +20,15 @@
 
 ### Database Creation
 ```sql
+CREATE DATABASE enpicom_test;   // Same database name to be placed in env variables
+
 CREATE TABLE dnas(
    id SERIAL PRIMARY KEY,
    sequence_string VARCHAR NOT NULL
 );
 ```
 
-### To Run application
+### To run application
 
 1. Git clone repository
 2. Create virtualenv
@@ -37,4 +39,4 @@ CREATE TABLE dnas(
 - PGSQL_PASSWORD
 - PGSQL_PORT
 - PGSQL_DB
-5. Run `python app.py <host> <port>`
+5. Run `python src/app.py <host> <port>`
