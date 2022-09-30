@@ -40,3 +40,10 @@ CREATE TABLE dnas(
 - PGSQL_PORT
 - PGSQL_DB
 5. Run `python src/app.py <host> <port>`
+
+
+### Improvements (for scalability)
+1.Run the server using Gunicorn (WSGI HTTP server) to support concurrency and load management
+2. The levenshtein scoring function should be made an async service (probably using Celery-RabbitMQ)
+- A search request will return a result token; which will initially show "Waiting/Processing" as status, and show the results once computed
+- This supports parallelism of the process (which could block time and memory)
